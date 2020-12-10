@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
@@ -11,5 +11,20 @@ function App() {
     </div>
   );
 }
+useEffect(() => {
+  const getImage = () => {
+    axios
+      .get(`https://api.nasa.gov/planetary/apod?api_key=${DEMO_KEY}`)
+      .then((res) => {
+        setFriends(res.data);
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
-export default App;
+export default function App() {
+  const [images, setImages] = useState([]);
+  const [currentImage, setCurrentImage = useState([]);
+}
