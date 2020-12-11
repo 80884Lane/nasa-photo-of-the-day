@@ -1,6 +1,7 @@
 import React, {useState, useEffect } from "react";
-import "./App.css";
-
+import axios from "axios";
+import styled from "styled-components";
+import Index from "./index";
 function App() {
   return (
     <div className="App">
